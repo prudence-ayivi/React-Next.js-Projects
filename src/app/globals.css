@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,
+body {
+  max-width: 100vw; 
+  font-family: 'Fira Mono', 'Droid Sans Mono', 'Courier New';
+  /*overflow-x: hidden;*/
+}
+
+
+
+/* footer styles */ 
+
+.footerStyles { 
+  padding: 1em 6em; 
+  border-top: 2px solid black; 
+  background-color: #6799DD; 
+  color: white;
+  font-family: 'Fira Mono', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+} 
+
+.footerRow { 
+  display: flex;
+  justify-content: space-evenly; 
+  align-items: center;
+  font-size: normal;
+  font-weight: 400;
+}
+
+h4.footerSection {  
+  text-align: center;
+  text-decoration: underline; 
+  text-transform: uppercase;
+  margin: 20px 0px; 
+  font-size: 18px;
+  font-weight: 800;
+  }
+
+.footerRow ul li {
+  background: black;
+  border: 1px solid yellow;
+  border-radius: 10px;
+  box-shadow: black;
+  color: white;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  }
+
+.footerBottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.SocialMedia {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
+} 
+.ImageSocial { 
+  margin: 10px 5px 0px 5px;
+  text-align: center; 
+  font-size: smaller;  
+} 
+
+.footerRow ul li a:hover { 
+  text-decoration: underline;
+
+}
+/* navStyles */ 
+
+.navStyles { 
+  height: 10vw; 
+  position: sticky;
+  z-index: 1; 
+  top: 0px; 
+  width: 100%;
+  padding: 10px;
+  background-color: #01293C;
+  color :	#fff; 
+  border-radius: 0 0 10px 10px;
+  display : flex;
+  align-items : right; 
+  justify-content: space-evenly; 
+  font-size: small; 
+  box-shadow: 10px black;
+} 
+
+.HeadIntro {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; 
+  flex-wrap: wrap;
+} 
+
+.HeadText { 
+  margin-left: 10px; 
+  text-align: center;
+}
+
+.Menu {
+  display: flex;
+  align-items: center; 
+  margin-left: 1vw;
+}
+
+
+.navStyles ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none; 
+  font-weight: 600;
+}
+
+.navStyles ul li { 
+  margin:  0px 5px;
+}
+
+.navStyles ul li a { 
+  margin : 5px;
+}
+
+.navStyles ul li a:hover { 
+  background: black;
+  border: 1px solid yellow;
+  border-radius: 10px;
+  box-shadow: black;
+  color: white;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+
+}
+
+/* Header */ 
+
+.Header { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black; 
+  color: antiquewhite; 
+  margin: 2em; 
+  padding: 15px; 
+  border-radius: 15px; 
+  border: 2px solid yellow;
+  box-shadow: 30px #6799dd;
+} 
+
+.Home { 
+  padding: 4rem;
+  /*display: flex;
+  align-items: center; 
+  flex-direction: row; 
+  flex-wrap: nowrap; */
+} 
+
+.SideHeader {
+  width: 50%;
+} 
+
+.HeaderUp {
+  width: 50%;
+  padding-left: 10px;
+} 
+
+.ContactSection { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.ContactText { 
+  height: fit-content;
+  background-color: rgb(56, 56, 161); 
+  color: antiquewhite; 
+  margin: 1em; 
+  padding: 15px; 
+  border-radius: 15px; 
+  box-shadow: 30px #6799dd;
+  width: 50%;
+}
+
+.SideHeader img { 
+  border-radius: 25px;
+}
+
+.DiscoverMe {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin: 20px 0;
+} 
+
+.Stacks-logo {
+  height: 20vmin;
+  pointer-events: none;
+} 
+
+@media (max-width: 991px) {
+	.Carousel {
+		display: none;
+	}
+} 
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .Stacks-logo {
+    animation: Stacks-logo-spin infinite 20s linear;
+  }
+}
+
+.Stacks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  align-items: center;
+  justify-content: center; 
+  text-align: center;
+}
+
+@keyframes Stacks-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Skills { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
