@@ -28,7 +28,7 @@ const LandingSection = () => {
       type: "",   
       comment:""
     },
-    onSubmit: (values) => {
+    onSubmit: values => {
       submit('', values)
       formik.resetForm()
     },
@@ -41,8 +41,20 @@ const LandingSection = () => {
     });
   
     useEffect(() => {
-      if (!response) { return }  
-      onOpen(response.type, response.message)
+      if (response) {
+        onOpen(response.type, response.message);
+        if(response.type === 'success'){
+            formik.resetForm();
+        }
+    }
+      //if (response.type === "errors") 
+      //  return;
+      //if (response.type === "success") {
+        //  formik.resetForm();
+       // }      
+      //onOpen(response.type, response.message);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     } , [response])
   
   return (
@@ -64,8 +76,9 @@ const LandingSection = () => {
                 <Input
                   id="firstName"
                   name="firstName"
+                  {...formik.getFieldProps('firstName')}
                 />
-                <FormErrorMessage>{formik.errors.firstName? formik.errors.firstName: null }</FormErrorMessage>
+                <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
               </FormControl>
               <FormControl isInvalid={formik.errors.email && formik.touched.email}>
                 <FormLabel htmlFor="email">Email Address</FormLabel>
@@ -73,8 +86,9 @@ const LandingSection = () => {
                   id="email"
                   name="email"
                   type="email"
+                  {...formik.getFieldProps('email')}
                 />
-                <FormErrorMessage>{formik.errors.email? formik.errors.email: null }</FormErrorMessage>
+                <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
               <FormControl>
                 <FormLabel htmlFor="type">Type of enquiry</FormLabel>
@@ -94,10 +108,10 @@ const LandingSection = () => {
                   height={250}
                   {...formik.getFieldProps('comment')}
                 />
-                <FormErrorMessage> {formik.errors.comment? formik.errors.comment: null} </FormErrorMessage>
+                <FormErrorMessage> {formik.errors.comment} </FormErrorMessage>
               </FormControl>
-              <Button type="submit" colorScheme="purple" width="full">
-                {isLoading ? 'Loading...' : 'Submit'}
+              <Button type="submit" colorScheme="purple" width="full"onSubmit={formik.handleSubmit} isLoading={isLoading}>
+                Submit
               </Button>
             </VStack>
           </form>

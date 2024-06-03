@@ -58,7 +58,7 @@ const Header = () => {
   let previousScrollPosition = 0;
 
   const handleScroll = () => {
-    let scrollPosition = window.pageYOffset;
+    let scrollPosition = window.scrollY;
    if (scrollPosition > previousScrollPosition) {
     topBar.current.style.transform = "translateY(-200px)"; 
    }else{
@@ -109,7 +109,7 @@ const Header = () => {
           <nav>
           <HStack spacing={8}>
               {socials.map((social, index) => (
-                <a href={social.url} key={index}>
+                <a href={social.url} key={index} target="blank">
                   <FontAwesomeIcon icon={social.icon} size="2x" />
                 </a>
               ))}
@@ -118,10 +118,10 @@ const Header = () => {
           <nav>
             <HStack spacing={8}>
               <a href="#projects" onClick={handleClick("projects")}>
-              Contact Me
+              Projects              
               </a>
               <a href="#contactme" onClick={handleClick("contactme")}>
-              Projects
+              Contact Me
               </a>
             </HStack>
           </nav>

@@ -5,18 +5,14 @@ import React from "react";
 
 const Card = ({ title, description, imageSrc }) => {
   return (
-  <VStack borderRadius={2} bg="white" color="black">
-    <Image src={imageSrc} alt={title} borderRadius={2}/>         
-    <VStack spacing={2} alignItems="start" justifyContent="left" m={2}>
-    <Heading as="h6">{title} </Heading>
-    <Text>{description} </Text>
+    <VStack borderRadius={10} bg="white" color="black">
+    <Image src={imageSrc} alt={title} borderRadius={10}/>         
+    <VStack spacing={2.5} alignItems="start" justifyContent="left" m={3}>
+    <Heading as="h6" fontSize='lg'>{title} </Heading>
+    <Text fontSize='md' color='grey'>{description}</Text>
     <HStack>
-      <a className='d-flex align-items-center c-pointer' href="https://github.com" alt='project link' 
-      target='_blank'
-      rel="noreferrer">
-      <Text fontSize='3' className='text-muted'> See More</Text>
+      <Text fontSize={14}> See More </Text>
       <FontAwesomeIcon icon={faArrowRight} size="1x" />
-       </a>
     </HStack>
     </VStack>
   </VStack>
